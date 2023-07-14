@@ -4,6 +4,7 @@ import About from '../views/About.vue'
 import Menu from '../views/Menu.vue'
 import Service from '../views/Service.vue'
 import Contact from '../views/Contact.vue'
+import CreateAcc from '../views/CreateAcc.vue'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path:'/contact',
     name:'contact',
     component:Contact
+  },
+  {
+    path:'/createUserAccount',
+    name:'createAccount',
+    component:CreateAcc
   }
 ]
 
