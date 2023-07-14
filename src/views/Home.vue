@@ -9,7 +9,6 @@
 </template>
 
 <script>
-
 import FooterSection from '../components/FooterSection'
 import ServiceSection from '../components/ServiceSection'
 import MenuSection from '../components/MenuSection'

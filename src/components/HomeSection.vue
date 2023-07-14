@@ -26,6 +26,7 @@ export default {
         box-sizing: border-box;
         padding: 50px 15%;
         width: 100%;
+        margin-top: 2%;
     }
     .home-text h1{
         color: rgb(255, 94, 0);
