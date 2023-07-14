@@ -5,37 +5,86 @@ import Menu from '../views/Menu.vue'
 import Service from '../views/Service.vue'
 import Contact from '../views/Contact.vue'
 import CreateAcc from '../views/CreateAcc.vue'
+import {auth} from '../firebase/config'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
+    beforeEnter(from,to,next){
+      let user=auth.currentUser;
+      if(user){
+        next()
+      }else{
+        next('/createUserAccount')
+      }
+    }
   },
   {
     path:'/about',
     name:'about',
-    component:About
+    component:About,
+    beforeEnter(from,to,next){
+      let user=auth.currentUser;
+      if(user){
+        next()
+      }else{
+        next('/createUserAccount')
+      }
+    }
   },
   {
     path:'/menu',
     name:'menu',
-    component:Menu
+    component:Menu,
+    beforeEnter(from,to,next){
+      let user=auth.currentUser;
+      if(user){
+        next()
+      }else{
+        next('/createUserAccount')
+      }
+    }
   },
   {
     path:'/service',
     name:'service',
-    component:Service
+    component:Service,
+    beforeEnter(from,to,next){
+      let user=auth.currentUser;
+      if(user){
+        next()
+      }else{
+        next('/createUserAccount')
+      }
+    }
   },
   {
     path:'/contact',
     name:'contact',
-    component:Contact
+    component:Contact,
+    beforeEnter(from,to,next){
+      let user=auth.currentUser;
+      if(user){
+        next()
+      }else{
+        next('/createUserAccount')
+      }
+    }
   },
   {
     path:'/createUserAccount',
     name:'createAccount',
-    component:CreateAcc
+    component:CreateAcc,
+    beforeEnter(from,to,next){
+      let user=auth.currentUser;
+      if(!user){
+        next()
+      }else{
+        next('/')
+      }
+    }
   }
 ]
 

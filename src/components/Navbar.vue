@@ -7,17 +7,25 @@
         <li><router-link to="/menu">Menu</router-link></li>
         <li><router-link to="/service">Services</router-link></li>
         <li><router-link to="/contact">Contact</router-link></li>
+        <li><button @click="Logout">Logout</button></li>
     </ul>
   </div>
 </template>
 
 <script>
+import {auth, signOut} from '../firebase/config'
 export default {
+    setup(){
+        let Logout=async () => {
+            await signOut(auth);
+        }
 
+        return { Logout };
+    }
 }
 </script>
 
-<style>
+<style scoped>
     .navbar{
         width: 100%;
         display: flex;
@@ -45,5 +53,9 @@ export default {
     }
     .navbar h2{
         color: rgb(255, 94, 0);
+    }
+    .navbarMenu button{
+        margin: 0px;
+        margin-left: 5px;
     }
 </style>

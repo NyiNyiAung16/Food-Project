@@ -1,5 +1,5 @@
 <template>
-<div>
+<div v-if="checkUser">
     <Navbar></Navbar>
 </div>
   <router-view/>
@@ -7,9 +7,14 @@
 
 <script>
 import Navbar from './components/Navbar'
+import user from './composables/user'
 export default {
   components: { Navbar },
+  setup(){
+    let checkUser=user;
 
+    return {checkUser}
+  }
 }
 </script>
 

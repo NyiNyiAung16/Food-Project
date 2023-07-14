@@ -1,26 +1,43 @@
 <template>
-    <form>
+    <form @submit.prevent="CreateAccount">
+        <h3>Foods Restaurant</h3>
         <label>Display Name</label>
-        <input type="text" v-model="displayName">
+        <input type="text" v-model="displayName" required>
         <label>Email</label>
-        <input type="email" v-model="email">
+        <input type="email" v-model="email" required>
         <label>Password</label>
-        <input type="password" v-model="password">
+        <input type="password" v-model="password" required>
+        <p>{{ error }}</p>
         <button>SignIn</button>
-        <p>If you already register , pls <span>Login</span> here</p>
+        <p>If you already register , pls <span @click="gotoSignIn">Login</span> here</p>
     </form>
 </template>
 
 <script>
 import { ref } from 'vue'
+import signIn from '../composables/signIn'
+import {useRouter} from 'vue-router'
 export default {
-    setup(){
+    setup(props,context){
         let displayName=ref('');
         let email=ref('');
         let password=ref('');
+        let router=useRouter();
 
+        let {error,create}=signIn();
+        let CreateAccount=async()=>{
+           await create(email.value,password.value,displayName.value);
+           displayName.value='';
+           email.value='';
+           password.value='';
+           router.push('/')
+        }
+        //switch component
+        let gotoSignIn=()=>{
+            context.emit('switchLogin');
+        }
 
-        return {displayName, email , password}
+        return {displayName, email , password, CreateAccount, error, gotoSignIn}
     }
 }
 </script>
@@ -28,7 +45,7 @@ export default {
 <style>
     form{
         max-width: 470px;
-        margin:15% auto;
+        margin:12%  auto 0px;
         padding: 20px 30px;
         box-sizing: border-box;
         background-color: #252543;
@@ -72,7 +89,11 @@ export default {
         color: rgb(81, 104, 160);
         cursor: pointer;
     }
-
+    form h3{
+        color: #ff5e00;
+        text-align: center;
+        font-size: 1.5rem;
+    }
 
 
 
