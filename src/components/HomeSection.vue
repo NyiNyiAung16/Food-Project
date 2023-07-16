@@ -20,7 +20,7 @@ export default {
 <style scoped> 
     .homeSection{
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2,500px);
         gap: 15px;
         align-items: center;
         box-sizing: border-box;
@@ -55,5 +55,41 @@ export default {
     }
     .btn:hover{
         color: #fff;
+    }
+    @media (max-width: 1200px) {
+        .homeSection{
+            grid-template-columns:repeat(2,1fr);
+            margin-top: 40px;
+        }
+        .home-img {
+            max-width: 350px;
+        }
+        .home-img img{
+            /* margin: 20px 0px 0px 0px; */
+        }
+        .home-text h1{
+            font-size: 2.9rem;
+        }
+        .home-text h2{
+            font-size: 1.9rem;
+        }
+    }
+        @media (max-width: 800px) {
+        .homeSection{
+            grid-template-columns: 1fr;
+            margin-top: 40px;
+        }
+        .home-img {
+            max-width: 290px;
+        }
+        .home-img img{
+            margin: 20px 0px 0px 0px;
+        }
+        .home-text h1{
+            font-size: 3.3rem;
+        }
+        .home-text h2{
+            font-size: 1.2rem;
+        }
     }
 </style>

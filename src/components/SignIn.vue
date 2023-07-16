@@ -45,7 +45,7 @@ export default {
 <style>
     form{
         max-width: 470px;
-        margin:12%  auto 0px;
+        margin:7%  auto 0px;
         padding: 20px 30px;
         box-sizing: border-box;
         background-color: #252543;
@@ -82,6 +82,7 @@ export default {
     form p{
         color: #fff;
         text-align: center;
+        letter-spacing: 1px;
     }
     form p span{
         border: none;
@@ -94,15 +95,30 @@ export default {
         text-align: center;
         font-size: 1.5rem;
     }
-
-
-
-
     button:hover{
         background: #35415f;
         color: #fff;
     }
     input:focus{
         outline: none;
+    }
+
+    /* responsive style */
+    @media (max-width:800px) {
+        form{
+            max-width: 370px;
+        }
+        form h3{
+            font-size: 1.3rem;
+        }
+        label{
+            font-size: 1rem;
+        }
+        input{
+            padding: 10px;
+        }
+        button{
+            padding: 8px 15px;
+        }
     }
 </style>

@@ -21,7 +21,17 @@ export default {
 </script>
 
 <style scoped>
+  .menuPage{
+    margin-top: 8%;
+  }
+  @media (max-width:1100px) {
     .menuPage{
-        margin-top: 10%;
+      margin-top: 15%;
     }
+  }
+  @media (max-width:700px) {
+    .menuPage{
+      margin-top: 25%;
+    }
+  }
 </style>

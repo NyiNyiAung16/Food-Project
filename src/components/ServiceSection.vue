@@ -63,7 +63,11 @@ export default {
         margin-top: 1px;
     }
     .s-boxController{
-        display: flex;
+        /* display: flex;
+        justify-content: center; */
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(210px,auto));
+        align-items: center;
         justify-content: center;
         gap: 50px;
         margin-top: 70px;
@@ -108,14 +112,30 @@ export default {
         color: #ff702a;
     }
     .serviceFooter button{
-        width: 100px;
+        max-width: 200px;
         padding: 10px 20px;
         background: #ff702a;
         border: none;
         border-radius: 5px;
+        margin: 0 auto;
     }
     .serviceFooter button a{
         color: #fff;
         text-decoration: none;
+    }
+
+    /* dynamic style */
+    @media (max-width:1000px) {
+        .serviceFooter h2{
+            font-size: 1.6rem;
+        }
+    }
+    
+    @media (max-width:600px) {
+        .s-boxController{
+            grid-template-columns: 1fr;
+            justify-items: center;
+            margin-top: 30px;
+        }
     }
 </style>

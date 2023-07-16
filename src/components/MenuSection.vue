@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="menuController">
     <div class="gap"></div>
     <div class="menu-nav">
         <h3>Food Menu</h3>
@@ -71,7 +71,6 @@ export default {
         align-items: center;
         padding: 10px;
         border-radius: 5px;
-        
     }
     .box img{
         width: 220px;
@@ -104,4 +103,16 @@ export default {
         border-radius: 5px;
         font-weight: bold;
     }
+
+    /* responsive style */
+    @media (max-width:700px) {
+        .menu-nav h2{
+            font-size: 1.4rem;
+        }
+        .box img{
+            width: 150px;
+            height: 170px;
+        }
+    }
+
 </style>

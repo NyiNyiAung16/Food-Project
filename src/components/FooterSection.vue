@@ -88,6 +88,7 @@ export default {
     .f-box .link li a{
         color: #9391a0;
         transition: 0.5s ease;
+        text-decoration: none;
     }
     .f-box .link li:not(:last-child){
         margin-bottom: 15px;
@@ -116,7 +117,7 @@ export default {
     }
     .footerLink{
         background: #252440;
-        padding: 30px 30%;
+        padding: 30px 20%;
         margin-top: 7%;
     }
     .footerBox {
@@ -135,5 +136,45 @@ export default {
     }
     .footerBox i:hover{
         color: orangered;
+    }
+
+    /* responsive style */
+    @media (max-width:1100px) {
+        .footerSection{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            padding: 20px;
+            gap: 3%;
+            text-align: center;
+        }
+        .bar{
+            width: 100px;
+            margin: auto;
+        }
+        .f-box h1{
+            text-align: center;
+        }
+        .f-box .icon{
+            justify-content: center;
+        }
+        .footerBox  > p{
+            font-size: 1.4rem;
+        }
+        .footerLink{
+            padding: 30px 10%;
+        }
+    }
+    @media (max-width:500px) {
+        .footerSection{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1%;
+        }
+        .footerBox  > p{
+            font-size: 1.2rem;
+        }
+        .footerLink{
+            padding: 30px 10%;
+        }
     }
 </style>

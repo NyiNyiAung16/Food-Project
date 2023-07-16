@@ -34,7 +34,7 @@ export default {
         width: 100%;
     }
     .about-text{
-        width: 450px;
+        max-width: 450px;
     }
     .about-text span{
         color: rgb(197, 132, 11);
@@ -49,9 +49,10 @@ export default {
     }
     .btn{
         background: rgb(255, 94, 0);
-        padding: 10px 20px;
+        padding: 7px 15px;
         border: none;
         border-radius: 10px;
+        margin: 0px;
     }
     .btn a{
         text-decoration: none;
@@ -62,5 +63,36 @@ export default {
     }
     .btn a:hover{
         color: rgba(20, 23, 23, 0.838);
+    }
+        @media (max-width: 1200px) {
+        .aboutSection{
+            grid-template-columns:repeat(2,1fr);
+            margin-top: 40px;
+            gap: 20px;
+        }
+        .about-img {
+            width: 300px;
+        }
+        .about-img img{
+            /* margin: 20px 0px 0px 0px; */
+        }
+        .about-text h2{
+            font-size: 1.5rem;
+        }
+    }
+        @media (max-width: 800px) {
+        .aboutSection{
+            grid-template-columns: 1fr;
+            margin-top: 40px;
+        }
+        .about-img {
+            width: 290px;
+        }
+        .about-img img{
+            margin: 20px 0px 0px 0px;
+        }
+        .about-text h2{
+            font-size: 1.2rem;
+        }
     }
 </style>
